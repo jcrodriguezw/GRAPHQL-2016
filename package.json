@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel-node server.js"
+    "build": "babel-node server.js",
+    "dev": "babel-watch server.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "graphql": "^0.11.7",
-    "graphql-tools": "^2.8.0"
+    "graphql-tools": "^2.8.0",
+    "mongoose": "^4.13.5",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

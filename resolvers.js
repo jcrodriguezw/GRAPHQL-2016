@@ -1,14 +1,22 @@
-const authorsTest = [{
-  id:1,
-  name: 'primer test',
-  age: 1,
-  books:['1 libro', '2 libro']
-}]
+import mongoose from 'mongoose'
+import authorsModelMongo from './models/authorsModelMongo'
 
 const resolvers = {
   Query: {
     authors: () => {
-      return authorsTest
+      return authorsModelMongo.find({})
+    },
+    author: (root, { id }) => {
+      return authorsModelMongo.findOne({ id: id })
+    }
+  },
+  Mutation:{
+    addAuthor: (root, { name, age, books}) => {
+      const author = new authorsModelMongo({name: name, age: age, books: books})
+      return author.save()
+    },
+    deleteAuthor: (root, { id }) => {
+      return author.remove()
     }
   }
 }
