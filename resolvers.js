@@ -14,6 +14,7 @@ const resolvers = {
     addAuthor: (root, { name, age, books}) => {
       const author = new authorsModelMongo({name: name, age: age, books: books})
       console.log('author', author)
+      console.log('other test')
       return author.save()
     },
     deleteAuthor: (root, { id }) => {
